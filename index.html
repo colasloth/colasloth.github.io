@@ -1,44 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>colasloth</title>
+    <meta charset="utf-8">
+    <meta name="description" content="A drop-in replacement for localhost.">
+    <meta name="author" content="colasloth.com">
     <link type="text/css" href="/css/styles.css" media="all" rel="stylesheet">
   </head>
   <body>
-    <section class="title">
-      <h1>colasloth</h1>
-    </section>
-    <section id="what">
-      <h3>What is this?</h3>
-      <p>
-        The domain <span class="highlight">colasloth.com</span> is just like any other domain, with the exception that it simply resolves to <span class="mono">127.0.0.1</span>, i.e. <span class="mono">localhost</span>, instead of pointing to the address of a specific machine. All subdomains under the domain also resolve to <span class="mono">localhost</span>, which can be useful in many situations.
-      </p>
-    </section>
-    <section id="how">
-      <h3>How does it work?</h3>
-      <p>
-        The DNS records of the domain are configured in a way that directs all requests to <span class="mono">localhost</span>. This is achieved with an A record for <span class="mono">colasloth.com</span> pointing at <span class="mono">127.0.0.1</span>, and another A record for the wildcard <span class="mono">*.colasloth.com</span> doing the same. This means that URLs such as <span class="mono">foo.bar.colasloth.com</span> also resolve to <span class="mono">localhost</span>.
-      </p>
-      <p>
-        You can verify this with an <span class="mono">nslookup</span> or <span class="mono">dig</span> to <span class="highlight">colasloth.com</span> or any subdomain under it. You can also rest assured that requests to <span class="highlight">colasloth.com</span> never leave your machine – the route the packets in your requests take can be checked by running a <span class="mono">traceroute</span> for the domain.
-      </p>
-    </section>
-    <section id="why">
-      <h3>But why?</h3>
-      <p>
-        In short: to simplify configuration.
-      </p>
-      <p>
-        Using a domain such as <span class="highlight">colasloth.com</span> during development of web applications enables teams to work together on a project, without requiring every collaborator to manually edit their hosts file. A good example scenario is where a reverse proxy is used locally to receive requests at port 80, delegating traffic onwards to various networking applications running at different ports. In this case requests to <span class="mono">http://colasloth.com</span> will appear as they are to the reverse proxy, and can be forwarded to the correct application accordingly. E.g. you could configure your proxy to point <span class="mono">api.colasloth.com</span> at your REST API, <span class="mono">colasloth.com</span> at your frontend, and <span class="mono">static.colasloth.com</span> at your static file server – all at the same time. As such, the development environment can be made to closely mimic the environment used in production.
-      </p>
-      <p>
-        To remove all uncertainty: <span class="highlight">colasloth.com</span> is obviously free to use for any project – no strings attached. The domain will continue to function the way it does indefinitely, barring any unforeseen circumstances, so you can be confident that your development environments will work in the future as well.
-      </p>
-    </section>
-    <section>
+    <div class="content">
+      <header>
+        <h1>colasloth</h1>
+      </header>
+      <section id="what">
+        <h3>What is this?</h3>
+        <p>
+          The domain <span class="highlight">colasloth.com</span> is just like any other domain, with the exception that it simply resolves to <span class="mono">127.0.0.1</span>, i.e. <span class="mono">localhost</span>, instead of pointing to the address of a specific machine. All subdomains under the domain also resolve to <span class="mono">localhost</span>, which can be useful in many situations.
+        </p>
+      </section>
+      <section id="how">
+        <h3>How does it work?</h3>
+        <p>
+          The DNS records of the domain are configured in a way that directs all requests to <span class="mono">localhost</span>. This is achieved with an A record for <span class="mono">colasloth.com</span> pointing at <span class="mono">127.0.0.1</span>, and another A record for the wildcard <span class="mono">*.colasloth.com</span> doing the same. This means that URLs such as <span class="mono">foo.bar.colasloth.com</span> also resolve to <span class="mono">localhost</span>.
+        </p>
+        <p>
+          You can verify this with an <span class="mono">nslookup</span> or <span class="mono">dig</span> to <span class="highlight">colasloth.com</span> or any subdomain under it. You can also rest assured that requests to <span class="highlight">colasloth.com</span> never leave your machine – the route the packets in your requests take can be checked by running a <span class="mono">traceroute</span> for the domain.
+        </p>
+      </section>
+      <section id="why">
+        <h3>But why?</h3>
+        <p>
+          In short: to simplify configuration.
+        </p>
+        <p>
+          Using a domain such as <span class="highlight">colasloth.com</span> during development of web applications enables teams to work together on a project, without requiring every collaborator to manually edit their hosts file. A good example scenario is where a reverse proxy is used locally to receive requests at port 80, delegating traffic onwards to various networking applications running at different ports. In this case requests to <span class="mono">http://colasloth.com</span> will appear as they are to the reverse proxy, and can be forwarded to the correct application accordingly. E.g. you could configure your proxy to point <span class="mono">api.colasloth.com</span> at your REST API, <span class="mono">colasloth.com</span> at your frontend, and <span class="mono">static.colasloth.com</span> at your static file server – all at the same time. As such, the development environment can be made to closely mimic the environment used in production.
+        </p>
+        <p>
+          To remove all uncertainty: <span class="highlight">colasloth.com</span> is obviously free to use for any project – no strings attached. The domain will continue to function the way it does indefinitely, barring any unforeseen circumstances, so you can be confident that your development environments will work in the future as well.
+        </p>
+      </section>
       <footer>
         <small>And yes: colasloth is an anagram of localhost.</small>
       </footer>
-    </section>
+    </div>
   </body>
 </html>
