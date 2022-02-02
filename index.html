@@ -24,6 +24,9 @@
           The DNS records of the domain are configured in a way that directs all requests to <span class="mono">localhost</span>. This is achieved with an A record for <span class="mono">colasloth.com</span> pointing at <span class="mono">127.0.0.1</span>, and another A record for the wildcard <span class="mono">*.colasloth.com</span> doing the same. This means that URLs such as <span class="mono">foo.bar.colasloth.com</span> also resolve to <span class="mono">localhost</span>.
         </p>
         <p>
+          The same applies to IPv6 — identical AAAA records exist, pointing at <span class="mono">::1</span>.
+        </p>
+        <p>
           You can verify this with an <span class="mono">nslookup</span> or <span class="mono">dig</span> to <span class="highlight">colasloth.com</span> or any subdomain under it. You can also rest assured that requests to <span class="highlight">colasloth.com</span> never leave your machine – the route the packets in your requests take can be checked by running a <span class="mono">traceroute</span> for the domain.
         </p>
       </section>
@@ -37,6 +40,21 @@
         </p>
         <p>
           To remove all uncertainty: <span class="highlight">colasloth.com</span> is obviously free to use for any project – no strings attached. The domain will continue to function the way it does indefinitely, barring any unforeseen circumstances, so you can be confident that your development environments will work in the future as well.
+        </p>
+        <p>
+          As of 2022, the domain is registered until 2031, which should probably be Good Enough™ for anyone looking to use this domain for its intended purpose.
+        </p>
+      </section>
+      <section id="tls">
+        <h3>What about TLS?</h3>
+        <p>
+          Unfortunately, certificates can be easily be revoked once the private key is "leaked", and clearly we can't have nice things with similar ease.
+        </p>
+        <p>
+          However, I'll happily provide TLS certificates upon request, subject to rate limits set by the certificate authority. What you'll get is a certificate (<span class="mono">fullchain.pem</span>, <span class="mono">chain.pem</span>, and <span class="mono">cert.pem</span>) and <b>individual private key</b> (<span class="mono">privkey.pem</span>) covering both <span class="mono">colasloth.com</span> and <span class="mono">*.colasloth.com</span>, issued by <a href="https://letsencrypt.org/">Let's Encrypt</a>. The private key will only be provided to you, so the certificate will only be revoked if you leak it to an untrusted party. I'll also send you a renewed certificate some week or so before expiry, until you tell me to stop.
+        </p>
+        <p>
+          If this sounds of interest, let me know by contacting me over <a href="mailto:main@xoudini.com?subject=colasloth.com%20certificate">email</a> or <a href="https://twitter.com/xoudini">the bird app</a>. I don't currently have an automated system to handle this, but in case of sufficient interest, I'll probably set something up.
         </p>
       </section>
       <footer>
